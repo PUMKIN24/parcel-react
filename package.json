@@ -1,0 +1,21 @@
+{
+  "name": "namaste-js-day-3",
+  "version": "1.0.0",
+  "description": "learning",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "jerry mathew",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserList": [
+    "last 2 versions"
+  ]
+}

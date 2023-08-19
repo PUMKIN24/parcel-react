@@ -1,0 +1,87 @@
+In react to get external functionalities we use bundlers
+- Webpack
+- vite
+- parcel
+
+In create-react-app the bundler used in webpack,most bundlers do the same job.
+Bundlers are packages to use packages in our code we need a package manager.
+We use package manager like npm or yarn.
+
+
+npm init - with this command we get a package.json file
+we use npm because we need a lot of packages in our app.
+then we install the parcel bundler.
+npm i -D parcel  
+here we use -D as parcel is dev dependency
+
+
+package-lock.json will tell exactly which version of the package/library are we using.
+its imp to push package-lock.json to git as it holds the data to recreate the nodemodules.
+package-lock.json file keep and maintain the version of all dependencies in nodemodules.
+
+
+node-modules
+is the database for the npm.
+all the information of the dependencies and their dependencies will be stored here.
+thus we have access to all the super powers other than that of react and browser.
+we never push nodemodules into git as it is super heavy.
+package-lock.json recreates the nodemodules in the server.
+
+
+we also have to change the script tag in index.html
+ from      <script  src="App.js"></script>
+ to this   <script type="module" src="App.js"></script>
+
+
+
+Creating a react app from scratch
+
+The “create-react-app” abstracts a lot of what makes a React app work away from you. It's worth taking the time to set up your project correctly from the start.
+
+There are a number of reasons you may want to make your own implementation, or at least have some idea of what it’s doing under the hood. 
+
+There are a couple of hurdles to starting a React app. 
+1. The first is that node can’t process all of the syntax (such as import/export and jsx). 
+2. The second is that you’ll either need to build your files or serve them somehow during development for your app to work — This is especially important in the latter situation.
+
+Luckily, we can handle these issues with Babel and Parcel / Webpack.
+
+
+parcel--
+1 it is bundling
+2 minifying
+3 cleaning code
+4 HMR- hot module replacement
+  there  is a file watcher algorithm written in c++. 
+  it watches ery file in the app including node-modules
+  it tracks all the files which are changing in realtime and it will tell the server to reload.
+5 caching
+6 optimization
+7 build production version of the app
+8 compressing
+9 gives https on dev machine "npx parcel index.html --https"
+10 manages port number
+11 consistent hashing algorithm
+12 zero config
+13 creates a server
+
+
+
+parcel-cache
+  there will be a folder called parcel-cache in which the parcel is occupied.
+  add this file to gitignore.
+
+
+dist folder
+keeps the files minified
+when we run  "npx parcel index.js" we will have a faster version of our project and serves it on the server.
+While we run "npx parcel build index.html" parcel minify all the folders and build the production file to the dist folder.
+parcel do optimization and caching of images and files.
+when we execute parcel for the first time  "npx parcel index.js"  it will  take long time, after for every refresh it takes only less ms this happens due to caching done by parcel.
+we do not need main in package.json as we include the entry point to the parcel.
+"npx parcel build index.html".
+after the above command parcel bundles the html,css and js and gives the production build version of the app which is the most optimized version. and this is called minifying.
+
+
+  
+
